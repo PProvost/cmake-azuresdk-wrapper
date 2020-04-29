@@ -13,15 +13,19 @@ target_include_directories(${PROJECT_NAME} INTERFACE
 )
 
 target_sources(${PROJECT_NAME} INTERFACE
-    ${LIB_BASEPATH}/src/az_aad.c
-    ${LIB_BASEPATH}/src/az_credential_client_secret.c
+    # Comment out the following to completely remove networking support
+    # from core/core
+    
+    # ${LIB_BASEPATH}/src/az_aad.c
+    # ${LIB_BASEPATH}/src/az_credential_client_secret.c
+    # ${LIB_BASEPATH}/src/az_http_pipeline.c
+    # ${LIB_BASEPATH}/src/az_http_policy.c
+    # ${LIB_BASEPATH}/src/az_http_policy_logging.c
+    # ${LIB_BASEPATH}/src/az_http_policy_retry.c
+    # ${LIB_BASEPATH}/src/az_http_request.c
+    # ${LIB_BASEPATH}/src/az_http_response.c
+    
     ${LIB_BASEPATH}/src/az_context.c
-    ${LIB_BASEPATH}/src/az_http_pipeline.c
-    ${LIB_BASEPATH}/src/az_http_policy.c
-    ${LIB_BASEPATH}/src/az_http_policy_logging.c
-    ${LIB_BASEPATH}/src/az_http_policy_retry.c
-    ${LIB_BASEPATH}/src/az_http_request.c
-    ${LIB_BASEPATH}/src/az_http_response.c
     ${LIB_BASEPATH}/src/az_json_builder.c
     ${LIB_BASEPATH}/src/az_json_parser.c
     ${LIB_BASEPATH}/src/az_json_pointer.c
